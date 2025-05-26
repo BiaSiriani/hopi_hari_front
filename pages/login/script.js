@@ -8,7 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     };
     
     try {
-        const response = await fetch('localhost:3000/usuarios/login', {
+        const response = await fetch('http://localhost:3000/usuarios/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         
         if (response.ok) {
             // Salvar dados do usuário no localStorage (para demonstração)
-            localStorage.setItem('user', JSON.stringify(data.user));
+            localStorage.setItem('token', JSON.stringify(data.token));
             
             // Redirecionar para a página principal (após login bem-sucedido)
             alert('Login realizado com sucesso!');
